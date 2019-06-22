@@ -1,29 +1,29 @@
-// logic for Pizza
-
-function Pizza (toppings, size) {
-  this.toppings=[];
-  this.size=size
+function Pizza (topping, size) {
+  this.topping = [],
+  this.size = size
 }
 
-Pizza.prototype.addToppings = function (toppings) {
-  pizza.toppings=this.addTopping();
-  this.toppings.push(topping)
-  }
+Pizza.prototype.add = function () {
+  this.topping.push($("#topping").val())
+}
+Pizza.prototype.big = function () {
+  this.size = parseFloat($("input:radio[name=size]:checked").val());
 }
 
-
-// logic for toppings
-
-function Toppings (topping){
-  this.topping=topping;
+Pizza.prototype.price = function () {
+  return this.size * 5;
 }
+var pizza = new Pizza();
 
 
-$(document).ready(function(event){
-  $("#build").submit(function(event){
+$(document).ready(function() {
+  $("#pizza").submit(function(event) {
     event.preventDefault();
-  $("input[name=toppings]:checked").change(function(){
-    pizza.toppings();
-  });
-});
+    var topping = ($("#topping").val());
+    var size = (parseFloat($("input:radio[name=size]:checked").val()))
+    pizza.big(size);
+    pizza.add(topping);
+    $("#price").text("Your pizza with " + pizza.topping + " will be $" + pizza.price());
+
+  })
 })
