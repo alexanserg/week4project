@@ -1,32 +1,33 @@
 function Pizza (topping, size) {
   this.topping = [],
-  this.size = size
-}
-
-Pizza.prototype.add = function () {
-  this.topping.push($("#topping").val())
-}
-Pizza.prototype.big = function () {
-  this.size = parseFloat($("input:radio[name=size]:checked").val());
-}
-
-Pizza.prototype.price = function () {
-  return this.size * 5;
+  this.size =  parseFloat($("input:radio[name=size]:checked").val());
 }
 
 
-var pizza = new Pizza();
+Pizza.prototype.cost = function () {
+  return  (this.topping.length * .5) + (this.size * 5);
+}
+
+
+
+
 
 
 $(document).ready(function() {
   $("#pizza").submit(function(event) {
     event.preventDefault();
-    pizza.topping = [];
-    var topping = ($("#topping").val());
-    var size = (parseFloat($("input:radio[name=size]:checked").val()))
-    pizza.big(size);
-    pizza.add(topping);
-    $("#price").text("Your pizza with " + pizza.topping + " will be $" + pizza.price().toFixed(2));
+    var pizza = new Pizza();
+    toppings = pizza.topping;
 
-  })
-})
+    $("input:checkbox[name=toppings]:checked").each(function(){
+      toppings.push($(this).val());
+    });
+    var output = pizza.cost().toFixed(2);
+    console.log(pizza.size);
+    if (output >= 5) {
+      $("#price").text("Your pizza with " + toppings + " will be" + "$" + output);
+    }  else {
+      $("#price").text("Please select toppings and Size");
+    }
+  });
+});
