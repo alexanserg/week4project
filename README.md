@@ -12,12 +12,9 @@ Pizza starts with a base price of 5 dollars. This goes up by a percentage if the
 
 |  Behavior                 |  input                  |  result               |
 |---------------------------|-------------------------|-----------------------|
-|  Should have base price of| Small pizza, no toppings| Price is 5 dollars    |
-|5 dollars                  |                         |                       |
-|---------------------------|-------------------------|-----------------------|
-| Base price goes up 50% for| Large pizza, no toppings| Price is 10 dollars   |
-|medium and 100% for large  |                         |                       | |---------------------------|-------------------------|-----------------------| | Price goes up 50 cents    |Large pizza, 3 toppings  | Price is $11.50       |
-|for each selected topping  |                         |                       | |---------------------------|-------------------------|-----------------------|
+|  Should have base price of 5 dollars | Small pizza, no toppings| Price is 5 dollars               |                         |                       
+| Base price goes up 50% for medium and 100% for large | Large pizza, no toppings| Price is 10 dollars |
+Price goes up 50 cents for each selected topping| Large pizza, 3 toppings  | Price is $11.50 |
 
 
 
