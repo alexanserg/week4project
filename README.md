@@ -31,8 +31,6 @@ For any issues or questions, please contact, alexandersergejev@gmail.com
 
 Application created using JavaScript and JQuery.
 
-### License
+### Licensed under the MIT license
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
-
-Copyright (c) 2016 **_{List of contributors or company name}_**
+### Copyright (c) 2019 by Alexander Sergejev
